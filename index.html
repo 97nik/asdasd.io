@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Поддержка приложения РУбли: контакты, FAQ и порядок обращения."
+    />
+    <title>РУбли - Поддержка</title>
+    <style>
+      :root {
+        --bg: #f2f2ee;
+        --surface: #fffefb;
+        --text: #121212;
+        --muted: #5a5a55;
+        --line: #deded7;
+        --accent: #cc163f;
+        --accent-2: #b11237;
+        --accent-soft: #f9cede;
+        --shadow: 0 14px 40px rgba(18, 18, 18, 0.08);
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 10% 0%, #ffffff 0%, transparent 35%),
+          radial-gradient(circle at 90% 100%, #e8f6f4 0%, transparent 30%),
+          var(--bg);
+        color: var(--text);
+        font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        line-height: 1.55;
+      }
+
+      .wrap {
+        width: min(880px, 100% - 32px);
+        margin: 36px auto 48px;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: reveal 400ms ease-out forwards;
+      }
+
+      @keyframes reveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: calc(var(--radius) + 2px);
+        box-shadow: var(--shadow);
+        padding: 26px;
+      }
+
+      .top-nav {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .top-nav a {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-size: 13px;
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .top-nav a.active {
+        border-color: #efb5c3;
+        background: var(--accent-soft);
+        color: #7a0f2a;
+      }
+
+      .app-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--muted);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 12px;
+        background: #fff;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      h1 {
+        margin: 16px 0 8px;
+        font-size: clamp(30px, 5.4vw, 46px);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        max-width: 65ch;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+      }
+
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .card-accent {
+        border-color: #efb5c3;
+        background: linear-gradient(180deg, #fff8fa 0%, var(--surface) 58%);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+      }
+
+      .list li {
+        margin: 7px 0;
+      }
+
+      a {
+        color: var(--accent-2);
+        text-underline-offset: 2px;
+      }
+
+      a:hover {
+        color: var(--accent);
+      }
+
+      .mail {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #f0b8c6;
+        background: var(--accent-soft);
+        color: #7a0f2a;
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 760px) {
+        .wrap {
+          width: min(880px, 100% - 18px);
+          margin-top: 16px;
+        }
+
+        .hero,
+        .card {
+          padding: 16px;
+          border-radius: 14px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <nav class="top-nav" aria-label="Navigation">
+          <a href="https://97nik.github.io/">О приложении</a>
+          <a href="https://97nik.github.io/asdasd.io/" class="active"
+            >Поддержка</a
+          >
+        </nav>
+        <span class="app-pill"><span class="dot"></span> App Support</span>
+        <h1>Поддержка приложения «РУбли»</h1>
+        <p class="lead">
+          Если у вас возник вопрос или проблема, свяжитесь с нами. Мы отвечаем
+          в порядке очереди и стараемся помочь максимально быстро.
+        </p>
+      </section>
+
+      <section class="grid" aria-label="Support Information">
+        <article class="card">
+          <h2>Как обратиться</h2>
+          <p class="muted">Основной канал связи:</p>
+          <p class="mail">
+            <a href="mailto:support@YOUR_DOMAIN.COM"
+              >support@YOUR_DOMAIN.COM</a
+            >
+          </p>
+          <p class="badge">Support channel</p>
+          <p class="muted">
+            Среднее время ответа: <strong>1-3 рабочих дня</strong>.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Что указать в обращении</h2>
+          <ul class="list">
+            <li>Модель устройства (например, iPhone 15 Pro)</li>
+            <li>Версия iOS/iPadOS</li>
+            <li>Версия приложения</li>
+            <li>Краткое описание проблемы и шаги воспроизведения</li>
+          </ul>
+        </article>
+
+        <article class="card card-accent">
+          <h2>Частые вопросы</h2>
+          <ul class="list">
+            <li>
+              <strong>Как добавить друга?</strong><br />
+              Через экран «Друзья»: вручную или из контактов (после выдачи
+              разрешения на доступ к контактам).
+            </li>
+            <li>
+              <strong>Как делится сумма расхода?</strong><br />
+              Расход делится поровну между выбранными участниками.
+            </li>
+            <li>
+              <strong>Можно ли отметить, что долг возвращен?</strong><br />
+              Да, в деталях расхода можно отметить, кто уже вернул деньги.
+            </li>
+            <li>
+              <strong>Можно ли редактировать или удалить расход?</strong><br />
+              Да, расходы можно редактировать и удалять в списке расходов.
+            </li>
+            <li>
+              <strong>Где хранятся данные?</strong><br />
+              Данные сохраняются локально на устройстве пользователя.
+            </li>
+            <li>
+              <strong>Есть ли платные функции в приложении?</strong><br />
+              Нет, цифровые функции приложения не требуют оплаты.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Юридическая информация</h2>
+          <p class="muted">
+            Политика конфиденциальности:
+            <a href="https://YOUR_PRIVACY_URL" rel="noopener"
+              >https://YOUR_PRIVACY_URL</a
+            >
+          </p>
+          <p class="muted">
+            Разработчик: <strong>РУбли</strong>
+          </p>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <span>Last updated: March 6, 2026</span>
+        <span>Public support page for App Store Connect</span>
+      </footer>
+    </main>
+  </body>
+</html>
